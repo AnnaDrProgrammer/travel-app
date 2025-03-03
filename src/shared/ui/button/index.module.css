@@ -1,0 +1,66 @@
+.button {
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color-bright);
+  font-family: var(--font-family-secondary);
+}
+
+.viewPrimary {
+  background-color: var(--primary-color);
+  font-size: var(--font-size-18);
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+.sizeMedium {
+  padding: 18px 24px;
+}
+
+.sizeLarge {
+  padding: 18px 92px;
+}
+
+.viewSecondaryDark {
+  background-color: var(--secondary-color-dark);
+  font-size: var(--font-weight-medium);
+  font-weight: var(--font-size-18);
+  border: 2px solid var(--secondary-stroke-color);
+
+  &:hover {
+    filter: brightness(2);
+  }
+}
+
+.viewSecondaryLight {
+  background-color: var(--secondary-color-light);
+  font-weight: var(--font-weight-medium);
+  border: 2px solid var(--secondary-stroke-color);
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+
+.sizeS {
+  padding: 18px 24px;
+  font-size: var(--font-size-22);
+}
+
+.sizeXS {
+  padding: 18px 24px;
+  font-size: var(--font-size-18);
+}
+
+.sizeXXS {
+  padding: 16px 24px;
+  font-size: var(--font-size-18);
+}
+
+.sizeSmallest {
+  padding: 14px 24px;
+  font-size: var(--font-size-18);
+}
