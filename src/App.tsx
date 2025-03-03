@@ -1,27 +1,13 @@
-import Button from './shared/ui/button';
+import { Route, Routes } from 'react-router-dom';
+import { ROUTER } from './shared/router';
+import { UIPage } from './pages/ui';
 
 function App() {
   return (
-    <>
-      <Button view="primary" size="m">
-        Browse Trip
-      </Button>
-      <Button view="primary" size="l">
-        View Trip Details
-      </Button>
-      <Button view="secondaryDark" size="smallest">
-        Home
-      </Button>
-      <Button view="secondaryDark" size="xxs">
-        Contact us
-      </Button>
-      <Button view="secondaryLight" size="s">
-        See all
-      </Button>
-      <Button view="secondaryLight" size="xs">
-        View All Trips
-      </Button>
-    </>
+    <Routes>
+      <Route path={ROUTER.HOME} element={<>APP</>} />
+      <Route path={ROUTER.UI} element={<UIPage />} />
+    </Routes>
   );
 }
 
