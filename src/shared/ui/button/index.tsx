@@ -10,7 +10,7 @@ type ButtonProps = {
 const Button = ({ children, view, size }: ButtonProps) => {
   return (
     <button
-      className={cn(styles.button, {
+      className={cn(styles['button'], {
         [styles.viewPrimary]: view === 'primary',
         [styles.viewSecondaryDark]: view === 'secondaryDark',
         [styles.viewSecondaryLight]: view === 'secondaryLight',

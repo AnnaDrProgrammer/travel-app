@@ -1,0 +1,57 @@
+.root {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-regular);
+}
+
+.primaryColor {
+  color: var(--text-color-bright);
+}
+
+.secondaryColor {
+  color: var(--text-color-dull);
+}
+
+.regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.fontSecondary {
+  font-family: var(--font-family-secondary);
+}
+
+.h1 {
+  font-size: var(--font-size-60);
+}
+.h2 {
+  font-size: var(--font-size-48);
+}
+.h3 {
+  font-size: var(--font-size-48);
+}
+.p1 {
+  font-size: var(--font-size-34);
+}
+.p2 {
+  font-size: var(--font-size-29);
+}
+.p3 {
+  font-size: var(--font-size-24);
+}
+.p4 {
+  font-size: var(--font-size-20);
+}
+.p5 {
+  font-size: var(--font-size-14);
+}
