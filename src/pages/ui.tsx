@@ -39,13 +39,16 @@ export const UIPage = () => {
         <Typography.Text variant="p1">
           Life Is Adventure Make The Best Of It
         </Typography.Text>
+        <Typography.Text variant="p2">
+          Life Is Adventure Make The Best Of It
+        </Typography.Text>
+        <Typography.Text variant="p3">
+          Life Is Adventure Make The Best Of It
+        </Typography.Text>
+        <Typography.Text variant="p4">
+          Life Is Adventure Make The Best Of It
+        </Typography.Text>
         <Typography.Text variant="p5">
-          Life Is Adventure Make The Best Of It
-        </Typography.Text>
-        <Typography.Text variant="p8">
-          Life Is Adventure Make The Best Of It
-        </Typography.Text>
-        <Typography.Text variant="p13">
           Life Is Adventure Make The Best Of It
         </Typography.Text>
       </div>

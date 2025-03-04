@@ -5,24 +5,17 @@ import React from 'react';
 type TitleProps = {
   variant: 'h1' | 'h2' | 'h3';
   children: React.ReactNode;
+  weight?: 'semibold' | 'bold' | 'medium' | 'regular';
+  font?: 'primary' | 'secondary';
+  color?: 'primaryColor' | 'secondaryColor';
 };
 
 type TextProps = {
-  variant:
-    | 'p1'
-    | 'p2'
-    | 'p3'
-    | 'p4'
-    | 'p5'
-    | 'p6'
-    | 'p7'
-    | 'p8'
-    | 'p9'
-    | 'p10'
-    | 'p11'
-    | 'p12'
-    | 'p13';
+  variant: 'p1' | 'p2' | 'p3' | 'p4' | 'p5';
   children: React.ReactNode;
+  weight?: 'semibold' | 'bold' | 'medium' | 'regular';
+  font?: 'primary' | 'secondary';
+  color?: 'primaryColor' | 'secondaryColor';
 };
 
 export const Typography = ({
@@ -32,22 +25,35 @@ export const Typography = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  return <div className={className}>{children}</div>;
+  return <div className={cn(styles.root, className)}>{children}</div>;
 };
 
-Typography.Title = ({ variant, children }: TitleProps) => {
+
+Typography.Title = ({
+  variant,
+  children,
+  weight = 'regular',
+  font = 'primary',
+  color = 'primaryColor',
+}: TitleProps) => {
   const Tag = variant;
 
   return (
-    <Typography>
+    <Typography className={cn(styles[variant], styles[weight], styles[font], styles[color])}>
       <Tag>{children}</Tag>
     </Typography>
   );
 };
 
-Typography.Text = ({ variant, children }: TextProps) => {
+Typography.Text = ({
+  variant,
+  children,
+  weight = 'regular',
+  font = 'primary',
+  color = 'secondaryColor',
+}: TextProps) => {
   return (
-    <Typography>
+    <Typography className={cn(styles[variant], styles[weight], styles[font], styles[color])}>
       <p>{children}</p>
     </Typography>
   );
