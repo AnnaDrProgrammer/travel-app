@@ -1,5 +1,4 @@
-import Button from '../shared/ui/button';
-import { Typography } from '../shared/ui/typography';
+import { Button, Typography } from '../shared/ui';
 
 export const UIPage = () => {
   return (
