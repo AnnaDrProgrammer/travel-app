@@ -1,10 +1,10 @@
 import { PageLayout } from '../../layouts/PageLayouts';
 import { MENU_NAVIGATION } from '../../shared/router';
 
-export const ServicesPage = () => {
+export const PlacesPage = () => {
   return (
     <PageLayout navigation={MENU_NAVIGATION}>
-      <div>Это чилдрен сервис пейдж</div>
+      <div>Places</div>
     </PageLayout>
   );
 };
