@@ -3,12 +3,16 @@
   font-weight: var(--font-weight-regular);
 }
 
-.primaryColor {
+.color--primary {
   color: var(--text-color-bright);
 }
 
-.secondaryColor {
+.color--secondary {
   color: var(--text-color-dull);
+}
+
+.color--invert {
+  color: var(--text-color-dark)
 }
 
 .regular {

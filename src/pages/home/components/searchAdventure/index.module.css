@@ -1,0 +1,25 @@
+.searchBlock {
+  background-image: url('../../../public/SearchBlockMountains.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 41px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 198px 100px;
+}
+
+.searchBlockPhrase {
+  max-width: 664px;
+  text-align: center;
+}
+
+.searchBlockPanel {
+  background-color: var(--text-color-bright);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
