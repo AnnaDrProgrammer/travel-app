@@ -1,5 +1,5 @@
 .container {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -40,9 +40,31 @@
     height: 3px;
     border-radius: 5px;
     background-color: var(--text-color-dull);
+    transition: all 0.3s ease;
+  }
+
+  .menuButton--close .menuButtonItem:first-child {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .menuButton--close .menuButtonItem:nth-child(2n) {
+    opacity: 0;
+  }
+
+  .menuButton--close .menuButtonItem:last-child {
+    transform: rotate(-45deg) translate(5px, -6px);
   }
 
   .container {
     padding: 22px;
+  }
+
+  .mobileNav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 300px;
   }
 }

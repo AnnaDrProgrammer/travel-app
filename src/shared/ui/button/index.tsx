@@ -22,6 +22,7 @@ export const Button = ({ children, view, size }: ButtonProps) => {
         [styles.viewSecondaryLight]: view === 'secondaryLight',
         [styles.viewText]: view === 'text',
         [styles.viewTextInverted]: view === 'textInverted',
+        
 
         [styles.sizeLarge]: size === 'l',
         [styles.sizeMedium]: size === 'm',

@@ -3,8 +3,8 @@ import cn from 'classnames';
 import styles from './index.module.css';
 import { NavLink } from 'react-router-dom';
 import { useIsMobile } from '../../shared/hooks/useIsMobile';
-import { Modal } from '../../shared/ui/modal';
 import { useState } from 'react';
+import { Sidebar } from '../../shared/ui/sidebar';
 
 export type Navigation = {
   title: string;
@@ -15,9 +15,31 @@ type HeaderProps = {
   navigation: Navigation[];
 };
 
+export const BurgerButton = ({
+  onClick,
+  view = 'burger',
+}: {
+  onClick(...arg: unknown[]): void;
+  view?: 'burger' | 'close';
+}) => {
+  return (
+    <div
+      className={cn(styles.menuButton, styles[`menuButton--${view}`])}
+      onClick={onClick}
+    >
+      <div className={styles.menuButtonItem}></div>
+      <div className={styles.menuButtonItem}></div>
+      <div className={styles.menuButtonItem}></div>
+    </div>
+  );
+};
 export const Header = ({ navigation }: HeaderProps) => {
   const isMobile = useIsMobile();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Состояние для управления сайдбаром
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev); // Переключаем состояние
+  };
 
   return (
     <header className={cn(styles.header, styles.container)}>
@@ -41,23 +63,29 @@ export const Header = ({ navigation }: HeaderProps) => {
         </Button>
       )}
 
-      {isMobile && (
-        <div className={styles.menuButton} onClick={() => setIsModalOpen(true)}>
-          <div className={styles.menuButtonItem}></div>
-          <div className={styles.menuButtonItem}></div>
-          <div className={styles.menuButtonItem}></div>
-        </div>
-      )}
+      {isMobile && <BurgerButton onClick={toggleSidebar} />}
 
       {isMobile && (
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <div className={styles.menu}>
-            <a>Page 1</a>
-            <a>Page 1</a>
-            <a>Page 1</a>
-            <a>Page 1</a>
+        <Sidebar
+          isOpen={isSidebarOpen}
+          onClose={toggleSidebar}
+          closeElement={<BurgerButton onClick={toggleSidebar} view="close" />}
+        >
+          <div className={styles.mobileNav}>
+            {navigation?.map(({ title, link }) => (
+              <NavLink to={link} key={title}>
+                {({ isActive }) => (
+                  <Button
+                    size="smallest"
+                    view={isActive ? 'textInverted' : 'text'}
+                  >
+                    {title}
+                  </Button>
+                )}
+              </NavLink>
+            ))}
           </div>
-        </Modal>
+        </Sidebar>
       )}
     </header>
   );
