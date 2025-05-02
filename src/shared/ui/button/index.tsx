@@ -3,17 +3,25 @@ import styles from './index.module.css';
 
 type ButtonProps = {
   children: React.ReactNode;
-  view: 'primary' | 'secondary' | 'secondaryDark' | 'secondaryLight';
+  view:
+    | 'primary'
+    | 'secondary'
+    | 'secondaryDark'
+    | 'secondaryLight'
+    | 'text'
+    | 'textInverted';
   size: 'l' | 'm' | 's' | 'xs' | 'xxs' | 'smallest';
 };
 
-const Button = ({ children, view, size }: ButtonProps) => {
+export const Button = ({ children, view, size }: ButtonProps) => {
   return (
     <button
-      className={cn(styles.button, {
+      className={cn(styles['button'], {
         [styles.viewPrimary]: view === 'primary',
         [styles.viewSecondaryDark]: view === 'secondaryDark',
         [styles.viewSecondaryLight]: view === 'secondaryLight',
+        [styles.viewText]: view === 'text',
+        [styles.viewTextInverted]: view === 'textInverted',
 
         [styles.sizeLarge]: size === 'l',
         [styles.sizeMedium]: size === 'm',
@@ -27,5 +35,3 @@ const Button = ({ children, view, size }: ButtonProps) => {
     </button>
   );
 };
-
-export default Button;
